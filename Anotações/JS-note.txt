@@ -1,0 +1,126 @@
+    Alguns eventos que podem ser usados pelo escutador são: ("click", "dblclick" etc) pode se encontra alguns no site:
+*https://developer.mozilla.org/en-US/docs/Web/Events*.
+    
+    É uma boa prática colocarmos nossos scripts no final do documento HTML para não ocorrer erros de estrutura pois o
+navegador executa o documento lendo linha por linha de cima para baixo.
+    É também uma boa prática, separar os códigos JS em arquivos diferentes para certas funcionalidades pois se deixarmos
+apenas 1 arquivo, ele ficará muito grande e de difícil localização na hora de fazermos uma alteração.
+    É uma boa prática reutilizar funções já criadas em outros arquivos JS em outros arquivos JS para deixar o código
+menos verboso.
+
+    O "DOM" (Document Object Model) é a forma como o navegador enxerga e representa nosso HTML e quem contém o DOM é a
+variável: *document* que usamos para manipular o documento HTML pelo JS, ela é muito utilizada e é de suma importância ter bom conhecimento da mesma pois são utilizadas inumeras funções em conjunto com ela.
+
+    É possível selecionar tags HTML dentro do mundo JavaScript, para isso usamos a função ".querySelector('xx');" e no 
+lugar de *xx* nós os trocamos pela tag ou pelo *id* ou pela *class* ou até mesmo seletor CSS daquele elemento, podemos salvar essa tag no nosso JS através de uma variável que pode ser criada e receber como valor a instrução acima.
+    Podemos ainda pegar apenas o conteúdo daquela tag através da função ".textContent" ela faz com que somente o conteúdo
+seja apresentado envez de aparecer a tag junto. (Podemos tirar prova disso usando o "console.log()").
+    Usando ainda essa mesma função, podemos alterar o conteúdo de uma tag do HTML, para isso salvamos a tag em uma
+variável, chamamos ela junto com o ".textContent" e damos um valor para essa função, exemplo: 
+// <h1>Nutrição</h1>.... var titulo = document.querySelector('h1');     titulo.textContent= Nutricionista;// Agora a tag <h1> apresenta o nome "Nutricionista" no navegador.
+    *Obs: É recomendado utilizar classes ou identificadores para chamarmos as tags do HTML para o JS pois se for feita
+uma manutenção e trocarem a tag referida, isso gera-ra um grande problema que poderia ser evitado.
+    Podemos buscar uma tag especifica dentro de uma tabela por exemplo usando a função ".querySelector", para fazer isso
+devemos procurar e salvar a tabela em uma variável e a partir dai usamos a variável para buscar outros elementos dentro daquela tabela.     Exemplo: "var tabela = document.querySelector('.tabela-pacientes');  >> var tdPeso = tabela.querySelector('.info-peso'); >> var peso = tdPeso.textContent;
+    Podemos usar a função ".querySelectorAll('xx') para selecionar todos os elementos daqueel nome que colocarmos dentro
+dos parênteses, podemos colocar o nome da tag, seletor de classe, e seletor de *id*.
+
+    É uma boa prática separar as linguagens em arquivos diferentes, ter um arquivo para JS, um para HTML um para CSS e
+assim sucessivamente.
+    *Obs: Para linkar um arquivo JS com o HTML usamos a tag com a propriedade: <script src="xx"> onde no lugar de *xx*
+colocamos o caminho do arquivo que queremos linkar (o código fonte).
+
+    Ao usarmos a condição *if* para fazermos uma pesquisa de possibilidade ("boleana" se é verdadeira ou falsa, de
+apenas 2 possibilidades) nós podemos usar o operador: ("||" este operador significa que estamos perguntando se aquela condição ou a outra condição é verdadeira ou falsa pois o "||" significa *ou* na linguagem de programação, mas para verificarmos se as duas são verdadeiras ou falsas usamos o operador "&&" este sinifica *e* na linguagem de programação, também existe o operador lógico "!" que inverte a verificação da condição *if* e em vez de verificar se é verdadeiro ele irá verificar se é falso).
+    *Obs: Nas condiçoes *if* sempre será perguntado se aquela condição e verdadeira, sendo assim não é necessário
+especificarmos se queremos saber se ela é verdadeira pois a própria linguagem já faz essa representação lógica.
+    Exemplo: if(botaoApertado) = aqui estamos perguntando se a variável *botaoApertado* tem valor verdadeiro, se sim ele
+executará o código que mapearemos dentro das chaves desse *if*.
+    Exemplo: if(!botaoApertado) = aqui estamos perguntando se a variável *botaoApertado* tem valor de 'false' pois o
+operador lógico "!" inverte a pergunta da condição ou seja em vez de verificar se é "true" ele irá verificar se é "false", sendo assim se a variável em questão for falsa ele executará o código mapeado na condição *if*.
+
+    No JS podemos limitar a quantidade de casas decimais visíveis em um resultado de fórmula por exemplo, para issou
+usamos uma função chamada ".toFixed(xx)" onde no lugar dos *x* colocamos a quantidadede casas decimais que desejamos que apareça em nossa página.
+
+    No JS podemos criar um (*array* lista em variável com determidado conteúdo) para ser executado dentro de um loop
+como o "for()" por exemplo, o for nada mais é do que um loop que recebe como parâmetros uma variável, a condição de repetição e o valor de incremento, neste "for()" podemos criar diversas coisas tais como o calculo de uma grande tabela onde colocamos todo o código de fórmula e incrementamos o *array* para delimitar esse limite.
+    Exemplo: for(var i = 0; i < *array.length*; i++){...} >> aqui estamos indicando que enquanto a variável *i* for
+menor que o tamanho do array (no lugar da palavra array colocamos o nome da variável da mesma) o for se repetirá.
+    É possível também adicionar dados no *array* após fazermos uma verificação de condição *if* por exemplo, para colocar
+um novo dado no array, podemos fazer o seguinte código: *nome da array.push("o dado que desejamos colocar");*.
+
+    No JS podemos editar estilos de nossa página, por exemplo podemos alterar a cor ou o background-color de um elemento
+caso ele dê um resultado errado, para isso, usamos a propriedade: ".style." onde depois do ponto colocamos o que desejamos alterar em nosso código, se o caso for que queremos alterar a cor da fonte colocamos *.style.color = "cor"* ou se queremos alterar a cor de fundo, precisamos usar o *background-color* no lugar de *color* porém, o JS não aceita hifens, então no caso da cor de fundo, em vez de colocarmos *background-color* tiramos o hífen e juntamos as duas palavras com uma pequena peculiaridade, a segunda palavra comecará com a letra maiúscula e as demais em minúscula, isso é um padrão de escrita do JS chamado: "Camel-Case".
+
+    É possível também no JS criarmos classes para mapea-las no CSS, fazemos isso através da função: 
+(*.classList.add("xx");* onde no lugar de *xx* colocamos o nome da classe que queremos criar.
+
+    Podemos adicionar no JS um escutador de eventos através da função ".addEventListener("x,y");" onde no lugar de x 
+colocamos o que queremos capturar de evento do usuário (pode ser um click um duplo click e etc) e no lugar de y colocamos a função que queremos executar, função essa que nós mesmos criamos e damos nome a ela.
+
+    Podemos adicionar funções no JS para facilitar nosso dia a dia, as funções tem o intuito de executar um código 
+pré-mapeado, fazemos isso usando o *funtion xxxx ()  {}* onde no lugar de *xxxx* colocamos o nome que queremos para nossa função, nome esse semântico para que faça sentido com a função e seja pequeno (*Obs: se o nome tiver 2 palavras, devemos separa-las uma da outra com a letra maiúscula, sem espaços) dentro dos parênteses podemos dar parâmetros a ser recebidos por essa função quando a mesma for chamada, esses parâmetros poderão ser usados depois dentro desta função caso seja necessário, e por último dentro das chaves fazemos todo o mapeamento de código que queremos que seja executado quando esta função seja chamada em nossa página.
+    Podemos também criar funções anônimas, estas tem as mesmas características de funções normais exceto pelo nome da
+mesma, funções anônimas não recebem nome pois são executadas somente naquela situação "executada junto á um evento por exemplo" estas são muito pouco usadas pois são atreladas normalmente a eventos.
+
+    Podemos impedir que uma ação pré-ordenada seja executada no nosso código como por exemplo ao clicarmos em um botão
+de enviar de um formulário a página não recarregue e não perca os dados passados na mesma, para isso existe a função: "event.preventDefault();" que faz com que o evento que deveria ser executado seja impedido, devemos também passar o "event" como parâmetro da função para não haver erros.
+
+    Podemos adicionar elementos no HTML através do JS e de um formulário, para isso precisamos seguir alguns passos para 
+que dê tudo certo, o primeiro e capturar o botão de envio do formulário através da função ".querySelector('');" depois devemos criar um escutador de eventos através da função ".addEventListener("click", xxxxx){....} onde no lugar de "xxxxx" seja passado o nome da função ou uma função anônima a ser executada, e dentro das chaves é passado o mapeamento no caso de função anônima, feito isso o primeiro mapeamento da função deve ser a função que impede o envio do formulário ao clicar no botão de envio, em seguida deve ser capturado o elemento do formulário através de sua class ou de seu id e colocado em uma variável, feito isso devemos puxar todos os itens que queremos salvar, fazemos isso através de variáveis e puxamos cada valor através da seguinte sintaxe: criamos uma variável e damos um nome >> esta recebe como valor o nome da variável que representa todo o formulário >> o nome da class ou id do item que queremos salvar na variável >> por último devemos colocar a propriedade "value" que significa o valor daquele elemento ou seja será puxado o valor que contém naquela class/id puxado...
+    *Obs: Lembrando que deve-se separar os itens acima por pontos "." Exemplo: var nome = form.nome.value;
+    Para adicionar a tabela completa segue instrução de exemplo no arquivo "js/principal.js" da linha 41 até a 75.
+
+    Para criarmos um elemento HTML através do JS, usamos a função ".createElement".
+    Para adicionarmos um elemento filho a outro elemento, usamos a função ".appendChild".
+
+    No JS existe uma forma de retornarmos valores em comuma algo que queremos trabalhar e em vez de fazermos várias
+variáveis ou criar um "array" podemos guardar todos esses valores em uma variável com a propriedade "objetos" que tem como objetivo agrupar coisas que fazem sentido tais como as caracteristicas de uma pessoa, peso, altura, etc...
+    Temos o exemplo disso no arquivo "js/form.js" da linha 38 até a 45.
+
+    A função "return" no JS tem como objetivo retorna para nós algum tipo de valor, seja em dados seja em valor boleano 
+"true/false" enfim, porém também é possível usá-lo para quebrar o ciclo de uma função, ao chama-lo sem nenhum valor ele interrompe o ciclo que seria executado.     Exemplo: return true; = aqui estamos retornando o valor verdadeiro para tal condição como por exemplo uma condição *if*.    Exemplo: return; = aqui estamos quebrando um ciclo de código pois ao chegar aqui ele interromperá a execução do código, isso é útil por exemplo quando queremos impedir que seja enviado um formulário quando os dados do mesmo for inválidos.
+
+    Nas condições *if* é possível deixa-la sem as "{}" mas isso só é possível caso a condição que queremos seja única e 
+o código mapeado também seja único, sendo assim pode se colocar tudo na mesma linha que o JS irá reconhecer da mesma forma, o exemplo está em "js/form.js" nas linhas 68 e 69.
+
+    No JS existe a função ".innerHTML" que nos permite controlar todo conteúdo interno do elemento citado antes do ponto,
+com isso é possível limparmos o conteúdo que era apresentado na página, fazer alterações e etc.
+
+    Podemos remover elementos do nosso HTML como de uma lista por exemplo, para fazermos isso, usamos a função "forEach"
+colocamos um escutador de eventos e damos uma função para este escutador , função esta que recebe um evento a ser escutado (como um click por exemplo) para que quando este evento seja escutado o elemento seja removido através da função "this.remove()" onde *this* significa uma palavra de contexto usada para se referir à quem está sendo atrelado ao evento como por exemplo um clique no elemento atrelado a função, em seguida o ".remove()" é o responsável por remover o elemento.
+    A forma declarada acima funiona somente se o que queremos remover já tiver sido carregado pelo navegador, se caso o 
+que queremos remover tenha sido adicionado depois como num formulário por exemplo, o código acima não funcionará, para removermos um elemento adicionado depois de a página já ter sido carregada devemos usar uma técnica chamada: "event bubbling", essa técnica usa o escutador de evento + uma função com o parâmentro (event) e dentro dessa função devemos colocar a função *event.target* (esta serve para selecionar um elemento alvo para não apagarmos uma tabela inteira por exemplo) em seguida devemos declarar a propriedade *.parentNode* que tem como objetivo subir ao pai do elemento clicado, fazendo isso nós usamos o: ".remove()" e assim excluimos um elemento pai inteiro em vez de somente um elemento filho (exemplo no arquivo: js/remover-pacientes.js; a partir da linha: 5) toda essa técnica tem como objetivo passar por cada elemento pai do elemento clicado ou seja, se clicarmos em uma <td> o evento escutado passará por todos os pais desse elemento até chegar ao <body>.
+
+    No JS existe uma função chamada "setTimeout" que tem como objetivo fazer o navegador aguardar determinado tempo em
+*ms* para que ele execute tal código mapeado na função, a sintaxe dessa função é da seguinte forma:
+"setTimeout(function{xxx}, y); onde no lugar de *xxx* passamos o que queremos que seja executado depois do tempo e no lugar de *y* passamos o tempo que queremos que o navegador aguarde (este tempo sempre é passado em *ms*);
+
+    É para criarmos um campo de pesquisa, podemos usar a tag <input> e no JS fazer todo o script necessário, para o 
+script usamos a função de escutador de eventos e colocamos como evento o "input" que toda vez que for digitado algum dado no campo input do HTML será capturado pelo escutador, sendo assim então criamos todo o resto da função em seguida, exemplo está no arquivo: *js/filtrar-paciente.js" a partir da linha 3.
+
+    Também é possível fazer fitlragens através da (*regex* "expressão regular") que o JS tem e várias outras linguagens
+de programação tem, para fazer isso, devemos criar uma variável dar nome a ela, e atribuir a essa variável  a função 
+"new RegExp(x,y)" essa função nada mais é que a sintaxe da expressão regular, onde no lugar de *x* colocamos o texto padrão ou seja quem queremos verificar e no lugar de *y* colocamos uma ou mais "flags" que nada mais é do que caracteristicas base para a busca podendo ser por exemplo se o conteúdo que queremos verificar está em maiúsculo ou minúsculo, para isso usamos o valor ("i") que significa ("Case-Insensitive" não liga se está em maiúsculo ou não) "esse valor é passado em áspas mesmo como se fosse uma string".
+    Feito todos os passos acima, agora precisamos incrementar uma condição de verificação usando essa função de
+expressao, para fazer isso podemos usar uma condição *if* e colocar em seus parâmetros a função "nome da var.test" e em seguida colocar como parâmetro dessa função quem queremos verificar ou seja quem será usado como base para fazer a buscar, por exemplo: [ var expressao = new RegExp(input.value, "i") >> if( expressao.test(nome)) nesse exemplo foi passado como base para verificação a variavel "nome" então será verificado o "input.value" e se ele tiver o conteúdo que tem no nome, será executado o código mapeado no *if*.
+    Este ".test" é o responsável por testar cada um dos caracteres para assimilar com o conteúdo alvo que é quem é
+passado no parênteses.
+    É possível também fazer buscas por uma outra funcionalidade do JS que é a ".substring" ou ".substr" essa função faz
+uma comparação básica entre ou conteúdo da variável que vem escrita antes do *.* com o ques está sendo escrito no "input" caso seja passado no código, é importante se atentar a todos os detalhes nesse método pois ele é muito complexo e deve ser passado tudo corretamente desde o que deve ser comparado ate com quem, nessa função ".substr" é passado 2 parâmetros que são eles (x,y) onde no lugar de *x* colocamos a partir de qual caractere deve ser comparado e o segundo onde deve terminar a comparação, vale ressaltar que esse método não faz distinção se o que está sendo comparado está em maiúsculo ou minúsculo, dito isso deve se digitar exatamente como está o que queremos achar, caso quisermos tirar esta distinção (ou seja se digitarmos em maiúsculo ou minúsculo indiferentemente será achado) devemos criar outra condição e outras variáveis que estas serão usadas para transformar os 2 textos para completo minúsculo e assim não termos problemas de verificação.
+    Todo o exemplo destas duas técnicas estão no arquivo: *js/filtrar-paciente.js* a partir da linha 14 até 39.
+
+    //Técnica AJAX:
+    Nós podemos requisitar conteúdos de outras páginas WEB através do JS, para isso nós usamos a função chamada:
+"new XMLHttpRequest(); e através dessa função nós criamos uma variável para guardar essa função e depois instruimos o que deve acontecer com a variável acima, feito isso, nós usamos agora o metodo ".open("x","y") " ele é responsável por abrir conexão com o endereço que queremos, e no lugar de *x* nós colocamos o que deve ser feito pelo navegador com o link que colocamos no lugar de *y*, podendo ser ("GET" o mais comum e este) "post" "input" e etc. 
+    Feito isso agora devemos usar um escutador de eventos para capturar quando o link estiver sido carregado para que
+ele nos retorne o conteúdo, fazemos isso através do escutador ("load" carregado) e usamos como função o ".responseText" que nos retorna todo contéudo que foi puxado do link.   Feito isso, fora dessa função nós chamamos ainda mais uma, desta vez uma para enviar nossa requisição chamada: ".send()".
+    *Obs: Para usar todas essas funções devemos colocar o nome da variável que contém o "new XMLHttpRequest" antes do *.*
+"ponto" de cada função.
+    Podemos pedir para o navegador nos dizer que tipo de dados tem na página que estamos requisitando através do "typeof
+xxxx" onde no lugar de *xxxx* colocamos o nome da variável que tem como valor a resposta da página ou seja criamos uma variável que recebe como atributo a página carregada que é passado através do ".responseText" (sem os parênteses).
+    Quando queremos utilizar conteúdos de uma página externa em nosso código de JS precisamos que ele esteja em um
+formato "palpável" esteja como "objeto" para que possamos manipular corretamente, para transformarmos todo o conteúdo de "string" para "objeto" nós utilizaremos o: "JSON.parse()" o "JSON" nada mais é do que a respresentação de dados (significa: JavaScript Object Notation) serve para notar objetos e strings em um documento e darlhes valores ou transforma-los em objetos além de notar se existe uma estrutura JS reconhecível se existir ele já á transforma em objeto, já a função que lhe acompanha ".parse()" serve para fazer analise de todo o conteúdo para que toda a instrução anterior aconteça, dentro dos parênteses de ".parse()" nós colocamos o  nome da variável que contém o conteúdo da página já carregada.
+    O exemplo de toda a instrução acima pode ser encontrada em: "js/buscar-paciente.js" da linha 6 em diante.
+    Podemos também verificar se foi executado tudo perfeitamente na requisição de uma URL, através dos códigos de erro
+que são mostrados quando algo da errado, para isso podemos usar a propriedade: ".status" que nos da acesso ao código que resultante da nossa requisição, lembrando que o código "200" significa que deu tudo certo.

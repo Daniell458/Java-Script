@@ -1,0 +1,1 @@
+Aqui estão todos meus aprendizados do módulo 3 de JS da Alura.
